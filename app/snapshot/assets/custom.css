@@ -82,7 +82,7 @@ footer {
   margin-top: 30px !important;
 }
 
-header #logo h1 { 
+header #logo h1 {
 
 line-height: 1.8em !important;
   padding-left: 176px;
@@ -235,9 +235,9 @@ div#calendario table tr td#dias {
 }
 
 p#conflito {
-   
+
     text-align: center;
-    
+
 }
 
 .fechar {
@@ -389,11 +389,11 @@ span#usuario_top {
 #menu > ul > li {
     float: left;
     margin-right: 16px;
-    
+
 }
 
 #menu>ul {
-    
+
     padding: 10px;
 }
 
@@ -411,8 +411,8 @@ div#disciplinaspegas {
 }
 
 p#limite {
-    
-    
+
+
     margin-bottom: 0px;
 }
 

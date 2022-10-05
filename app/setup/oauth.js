@@ -21,7 +21,7 @@ async function facebook (context) {
   const resp = await Axios.get(url)
 
   const faceUser = resp.data
-  
+
   if(!faceUser.id) {
     throw new Error('Missing faceUser.id')
   }
@@ -38,7 +38,7 @@ async function facebook (context) {
   let user = await App.models.users.findOne({
     $or: findConditions
   })
-  
+
   if(user) {
     if (userId) user.set('active', true)
     user.set('oauth.facebook', faceUser.id)
@@ -58,7 +58,7 @@ async function facebook (context) {
   }
 
   await user.save()
-  
+
   const WEB_URL = env == "development" ? "http://localhost:7500" : App.config.WEB_URL
 
   return {
@@ -113,7 +113,7 @@ async function google(context) {
   }
 
   await user.save()
-  
+
   const WEB_URL = env == "development" ? "http://localhost:7500" : App.config.WEB_URL
 
   return {

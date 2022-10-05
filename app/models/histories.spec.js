@@ -14,7 +14,7 @@ describe('MODELS histories', function() {
       xit('creates an enrollment or update one if does not exists', async function () {
         const prevEnrollments = await app.models.enrollments.count({})
         const ra = populateData[0].ra
-        
+
         await app.models.histories.findOneAndUpdate({
           ra: ra
         }, populateData[0], {

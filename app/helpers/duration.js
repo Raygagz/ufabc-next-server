@@ -3,7 +3,7 @@ module.exports = ms => {
     return ms + ' ms'
 
   ms = Math.round(ms / 1000)
-  if (ms < 60) 
+  if (ms < 60)
     return ms + ' s'
 
   ms = Math.round(ms / 60)

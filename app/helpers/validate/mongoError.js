@@ -3,13 +3,13 @@
  * throwing errors to the application with the converted error
  * type.
  *
- * For instance, Mongo uses custom internal errors such as 
+ * For instance, Mongo uses custom internal errors such as
  * 'ValidationError'. We then convert it to our own type of error
- * best for Requests and make them a 401 instead of 500 when 
- * throwing them during request error handling 
+ * best for Requests and make them a 401 instead of 500 when
+ * throwing them during request error handling
  *
  * See: helpers/middlewares/errors for details on handling errors
- * 
+ *
  */
 
 var _ = require('lodash')

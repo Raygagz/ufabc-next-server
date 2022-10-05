@@ -15,7 +15,7 @@ module.exports = async function (context) {
     teoria: 1,
     pratica: 1,
   }).lean({ virtuals: true })
-  
+
   const disciplinasMap = new Map([...disciplinas.map(d => [d.identifier, d])])
 
   const keys = ['ra', 'year', 'quad', 'disciplina']
@@ -30,7 +30,7 @@ module.exports = async function (context) {
       identifier: app.helpers.transform.identifier(e, keys),
       disciplina_identifier: app.helpers.transform.identifier(e),
     }))
-  
+
   const enrollmentsHash = crypto.createHash('md5').update(JSON.stringify(enrollments)).digest('hex')
   if(enrollmentsHash != hash) {
     return {
@@ -41,7 +41,7 @@ module.exports = async function (context) {
   }
 
   const chunks = _.chunk(enrollments, Math.ceil(enrollments.length / 3))
-  
+
   app.agenda.now('updateEnrollments', { json: chunks[0] })
   app.agenda.schedule('in 2 minutes', 'updateEnrollments', { json: chunks[1] })
   app.agenda.schedule('in 4 minutes', 'updateEnrollments', { json: chunks[2] })

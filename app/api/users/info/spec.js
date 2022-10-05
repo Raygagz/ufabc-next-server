@@ -30,7 +30,7 @@ describe("GET /users/info", function() {
                 assert.equal(user.createdAt, response.createdAt)
                 assert.equal(user.devices, response.devices)
                 assert.notEqual(user.private, response.private)
-                
+
 
             })
         })
@@ -39,9 +39,9 @@ describe("GET /users/info", function() {
                 const context = {
 
                 }
-                
+
                 await assertFuncThrows("NotFound", func, context)
-            
+
             })
         })
     })

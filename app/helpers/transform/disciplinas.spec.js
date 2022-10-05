@@ -15,7 +15,7 @@ describe('helpers.transform.disciplinas', function () {
 
   it('test if parses everything correctly', function () {
     let resp = sample.map(m => _.pick(func(m), pick))
-    
+
     assert(resp.every(r => ['diurno', 'noturno', 'tarde'].includes(r.turno)))
     assert(resp.every(r => ['sao bernardo', 'santo andre' ].includes(r.campus)))
     assert(resp.every(r => r.turma.length > 0 && r.turma.length <= 3))

@@ -11,7 +11,7 @@ const sync = require('@/api/disciplinas/sync/func')
 
 describe('PUT /v1/disciplinas/teachers', function() {
   var context
-  
+
   beforeEach(async function () {
     context = {
       query: {},

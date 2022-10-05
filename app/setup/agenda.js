@@ -25,7 +25,7 @@ module.exports = async(app) => {
   // wait agenda to be ready before returning
   return new Promise((resolve) => {
     agenda.once('ready', async function () {
-      const collection = _.get(agenda, '_collection.collection', null) || agenda._collection 
+      const collection = _.get(agenda, '_collection.collection', null) || agenda._collection
 
       // make sure indexes are created to optimized front-end
       await collection.createIndexes([

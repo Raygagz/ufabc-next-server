@@ -39,7 +39,7 @@ var Model = module.exports = Schema({
     type: [Number],
     default: []
   },
-  
+
   year: Number,
   quad: Number,
 

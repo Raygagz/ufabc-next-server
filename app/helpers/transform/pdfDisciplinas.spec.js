@@ -8,7 +8,7 @@
 describe('helpers.transform.pdfDisciplinas', function () {
   // let sample
   // let pick = ['codigo', 'disciplina', 'turma', 'campus', 'turno']
-  
+
   beforeEach(function () {
   })
 

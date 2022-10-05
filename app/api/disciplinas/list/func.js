@@ -7,7 +7,7 @@ module.exports = async function () {
   const cacheKey = `todasDisciplinas_${season}`
 
   let cached =  await app.redis.cache.get(cacheKey)
-  
+
   if(cached){
     return cached
   }

@@ -16,7 +16,7 @@ module.exports = async (context) => {
     conceito: 1,
     subject: 1,
     disciplina: 1,
-    pratica: 1, 
+    pratica: 1,
     teoria: 1,
     year: 1,
     quad: 1,

@@ -1,10 +1,10 @@
 ﻿/*
-Explicação prévia: 
-1. A variável todasDisciplinas vem do arquivo todasDisciplinas.js e contém objetos 
+Explicação prévia:
+1. A variável todasDisciplinas vem do arquivo todasDisciplinas.js e contém objetos
 que possuem diversos atributos de cada disciplina ofertada.
 
 2. A variável contagemMatriculas possui todas as matrículas por disciplina e também
-vem de um arquivo externo, o contagemMatriculas.js. 
+vem de um arquivo externo, o contagemMatriculas.js.
 
 */
 //-----------------------------------------------------------------------------//
@@ -71,8 +71,8 @@ while(x<31) {
 
 		td[y+1] = document.createElement('td');
 		td[y+1].id = "dias";
-		td[y+1].className = "quinzenaum" + "_" + (y+1) + "_" + 
-		valorhorario[0] + valorhorario[1] + valorhorario[3] + 
+		td[y+1].className = "quinzenaum" + "_" + (y+1) + "_" +
+		valorhorario[0] + valorhorario[1] + valorhorario[3] +
 		valorhorario[4];
 		y = y+1;
 
@@ -157,8 +157,8 @@ while(x<31) {
 
 		td[y+1] = document.createElement('td');
 		td[y+1].id = "dias";
-		td[y+1].className = "quinzenadois" + "_" + (y+1) + "_" + 
-		valorhorario[0] + valorhorario[1] + valorhorario[3] + 
+		td[y+1].className = "quinzenadois" + "_" + (y+1) + "_" +
+		valorhorario[0] + valorhorario[1] + valorhorario[3] +
 		valorhorario[4];
 		y = y+1;
 
@@ -201,7 +201,7 @@ while(i<31) {
 	//var cursoAluno = 2; //Declarado para testar um curso
 	var normalizador = "option[value=" + cursoAluno + "]"; //Normaliza o seletor
 	//todasMatriculas = matriculas[1262]; //Informa qual é o aluno
-	$(normalizador)[0].selected = true; //Seleciona o curso 
+	$(normalizador)[0].selected = true; //Seleciona o curso
 	organizaDisciplinas(); //Organiza as disciplinas na tabela de acordo com o curso selecionado
 	po=0;
 	while(po<todasMatriculas.length) //Enquanto for menor do que as matrículas do aluno

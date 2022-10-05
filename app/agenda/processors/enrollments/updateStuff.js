@@ -6,7 +6,7 @@ module.exports = function (agenda) {
 
 async function updateStuff (payload) {
   const data = payload.json
-  
+
   const ONE_HOUR = 60 * 60
   const teachers = await app.models.teachers.find({}).lean(true).cache(ONE_HOUR, 'teachers')
 

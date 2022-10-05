@@ -1,19 +1,19 @@
    //Obs.: Algumas funções estão sendo chamadas inline via HTML.
 
-   
-   
+
+
 
 function verificaDia(verificardisciplina, dia) { //Retorna o dia de acordo com o valor especificado
 
   switch(verificardisciplina["horarios"][dia]["semana"]) {
 
-    case 0: 
+    case 0:
     return "Domingo ";
     break;
     case 1:
     return "Segunda-feira ";
     break;
-    case 2: 
+    case 2:
     return "Terça-feira ";
     break;
     case 3:
@@ -35,16 +35,16 @@ function verificaDia(verificardisciplina, dia) { //Retorna o dia de acordo com o
 
 
 function converteDia(valor) { //Retorna o dia de acordo com o valor especificado
-  
+
   switch(valor) {
 
-    case 0: 
+    case 0:
     return "Domingo ";
     break;
     case 1:
     return "Segunda-feira ";
     break;
-    case 2: 
+    case 2:
     return "Terça-feira ";
     break;
     case 3:
@@ -69,7 +69,7 @@ function verificaHora(verificardisciplina, dia) { //Função que verifica o hor�
 
 
   var tamanhohoras = verificardisciplina["horarios"][dia]["horas"].length;
-  
+
   return "das " + verificardisciplina["horarios"][dia]["horas"][0] + " às " + verificardisciplina["horarios"][dia]["horas"][tamanhohoras-1];
 
 }
@@ -101,7 +101,7 @@ function verificaPeriodicidade(verificardisciplina, dia) { //Função que verifi
 
    }
 
-   //Execução da função quinzenal, ao se clicar no botão 
+   //Execução da função quinzenal, ao se clicar no botão
    //"Visualização quinzenal" => atualmente desativado.
 /*
    function quinzenal() {
@@ -127,7 +127,7 @@ function verificaPeriodicidade(verificardisciplina, dia) { //Função que verifi
 
 
         // document.getElementById("dias").innerHTML = (todasDisciplinas[i].horarios[1].horas + "");
-        
+
 
 function retornaHorario(valor) { //Retorna o horário baseado no valor inserido
 
@@ -220,7 +220,7 @@ switch(valor) {
   case 28:
   return "22:00";
 
-  case 29: 
+  case 29:
   return "22:30";
 
   case 30:
@@ -243,7 +243,7 @@ function periodicidadeDisciplina(disciplina, dia) //Retorna a periodicidade
 
   var numerodisciplina = ($(disciplina)[0]['id']); //Pega o número da disciplina
   return todasDisciplinas[numerodisciplina]['horarios'][dia]['periodicidade_extenso'];
-  
+
 
 
 }
@@ -261,51 +261,51 @@ function disciplinaConflitanteSemanal(disciplina, qualdia) //Verifica se a disci
 
           x=0; //variável de controle
           var horariosarray = [];
-            
 
-  while(x<tamanhohorarios-1) 
+
+  while(x<tamanhohorarios-1)
   {
 
-           
+
             horariosarray[x] =  todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][0] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][1] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][3] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][4];
             x = x+1;
 
 
   }
-          
+
           x=0;
 
-  while(x<tamanhohorarios-1) 
-  
+  while(x<tamanhohorarios-1)
+
   {
 
       var seletor = "." + "quinzenaum_" + dia + "_" + horariosarray[x];
       var seletor2 = "." + "quinzenadois_" + dia + "_" + horariosarray[x];
-  
-    if($(seletor)[0].style.backgroundColor == "rgb(0, 100, 0)"  || $(seletor2)[0].style.backgroundColor == "rgb(0, 100, 0)" || $(seletor)[0].style.backgroundColor == "rgb(29, 40, 163)" || $(seletor2)[0].style.backgroundColor == "rgb(29, 40, 163)" ) 
+
+    if($(seletor)[0].style.backgroundColor == "rgb(0, 100, 0)"  || $(seletor2)[0].style.backgroundColor == "rgb(0, 100, 0)" || $(seletor)[0].style.backgroundColor == "rgb(29, 40, 163)" || $(seletor2)[0].style.backgroundColor == "rgb(29, 40, 163)" )
     {
-      
+
     break;
 
     }
 
-    else 
+    else
     {
 
     return false;
-  
+
     }
-  
+
 
 
 
   x = x+1;
-    
+
 
 
   }
 
-  
+
 }
 
 
@@ -321,12 +321,12 @@ function pintarCalendarioSemanal(disciplina, qualdia) //Pinta o calendário para
 
         x=0; //variável de controle
         var horariosarray = [];
-            
 
-  while(x<tamanhohorarios-1) 
+
+  while(x<tamanhohorarios-1)
   {
 
-           
+
             horariosarray[x] =  todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][0] + todasDisciplinas[numerodisciplina]['horarios']
 
 [qualdia]['horas'][x][1] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][3] + todasDisciplinas[numerodisciplina]['horarios']
@@ -338,7 +338,7 @@ function pintarCalendarioSemanal(disciplina, qualdia) //Pinta o calendário para
   }
   x=0; //reinicializa a variável de controle
 
-  while(x<horariosarray.length) 
+  while(x<horariosarray.length)
   {
 
             var seletor = "." + "quinzenaum_" + dia + "_" + horariosarray[x];
@@ -352,9 +352,9 @@ function pintarCalendarioSemanal(disciplina, qualdia) //Pinta o calendário para
             {
               $(seletor)[0].style.backgroundColor = "rgb(29, 40, 163)";
             }
-            
+
             $(seletor)[0].classList.add(numerodisciplina);
-            if(todasDisciplinas[numerodisciplina].codigo.length > 7) 
+            if(todasDisciplinas[numerodisciplina].codigo.length > 7)
             {
               var codigodisciplina = todasDisciplinas[numerodisciplina].codigo[0] + todasDisciplinas[numerodisciplina].codigo[1] + todasDisciplinas[numerodisciplina].codigo[2] + todasDisciplinas[numerodisciplina].codigo[3] + todasDisciplinas[numerodisciplina].codigo[4] + todasDisciplinas[numerodisciplina].codigo[5] + todasDisciplinas[numerodisciplina].codigo[6];
             }
@@ -376,7 +376,7 @@ function pintarCalendarioSemanal(disciplina, qualdia) //Pinta o calendário para
             }
             $(seletor2)[0].classList.add(numerodisciplina);
 
-            if(todasDisciplinas[numerodisciplina].codigo.length > 7) 
+            if(todasDisciplinas[numerodisciplina].codigo.length > 7)
             {
               var codigodisciplina = todasDisciplinas[numerodisciplina].codigo[0] + todasDisciplinas[numerodisciplina].codigo[1] + todasDisciplinas[numerodisciplina].codigo[2] + todasDisciplinas[numerodisciplina].codigo[3] + todasDisciplinas[numerodisciplina].codigo[4] + todasDisciplinas[numerodisciplina].codigo[5] + todasDisciplinas[numerodisciplina].codigo[6];
             }
@@ -385,9 +385,9 @@ function pintarCalendarioSemanal(disciplina, qualdia) //Pinta o calendário para
               var codigodisciplina = todasDisciplinas[numerodisciplina].codigo;
             }
 
-            
+
             $(seletor2)[0].innerHTML = codigodisciplina;
-            
+
             x++;
 
   }
@@ -403,7 +403,7 @@ function alertaCalendario(disciplina) //Emite o alerta informando que houve conf
   var normalizador = "input[value=" + numerodisciplina + "]";
   $(normalizador)[0].checked = false;
   $('div#fundopreto')[0].style.display = "block";
-  
+
 
 }
 
@@ -418,12 +418,12 @@ function limpacorCalendarioSemanal(disciplina, qualdia) //Limpa o calendário qu
 
         x=0; //variável de controle
         var horariosarray = [];
-            
 
-  while(x<tamanhohorarios-1) 
+
+  while(x<tamanhohorarios-1)
   {
 
-           
+
             horariosarray[x] =  todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][0] + todasDisciplinas[numerodisciplina]['horarios']
 
 [qualdia]['horas'][x][1] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][3] + todasDisciplinas[numerodisciplina]['horarios']
@@ -435,7 +435,7 @@ function limpacorCalendarioSemanal(disciplina, qualdia) //Limpa o calendário qu
   }
   x=0; //reinicializa a variável de controle
 
-  while(x<horariosarray.length) 
+  while(x<horariosarray.length)
   {
 
             var seletor = "." + "quinzenaum_" + dia + "_" + horariosarray[x];
@@ -448,7 +448,7 @@ function limpacorCalendarioSemanal(disciplina, qualdia) //Limpa o calendário qu
             $(seletor2)[0].style.backgroundColor = "";
             $(seletor2)[0].classList.remove(numerodisciplina);
             $(seletor2)[0].innerHTML = "";
-            
+
             x++;
 
   }
@@ -465,12 +465,12 @@ function verificaDisciplinaSelecionada(disciplina, qualdia) { //Verifica se é d
 
         x=0; //variável de controle
         var horariosarray = [];
-            
 
-  while(x<tamanhohorarios-1) 
+
+  while(x<tamanhohorarios-1)
   {
 
-           
+
             horariosarray[x] =  todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][0] + todasDisciplinas[numerodisciplina]['horarios']
 
 [qualdia]['horas'][x][1] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][3] + todasDisciplinas[numerodisciplina]['horarios']
@@ -482,13 +482,13 @@ function verificaDisciplinaSelecionada(disciplina, qualdia) { //Verifica se é d
   }
   x=0; //reinicializa a variável de controle
 
-  
+
 
     var seletor = "." + "quinzenaum_" + dia + "_" + horariosarray[0];
     var seletor2 = "." + "quinzenadois_" + dia + "_" + horariosarray[0];
 
 
-    if($(seletor)[0].classList.contains(numerodisciplina) || $(seletor2)[0].classList.contains(numerodisciplina)) 
+    if($(seletor)[0].classList.contains(numerodisciplina) || $(seletor2)[0].classList.contains(numerodisciplina))
     {
 
       return true;
@@ -499,9 +499,9 @@ function verificaDisciplinaSelecionada(disciplina, qualdia) { //Verifica se é d
       return false;
     }
 
-    
 
-  
+
+
 
 
 }
@@ -524,12 +524,12 @@ function pintarCalendarioQuinzenal(disciplina, qualdia, quinzena) //Pinta o cale
 
         x=0; //variável de controle
         var horariosarray = [];
-            
 
-  while(x<tamanhohorarios-1) 
+
+  while(x<tamanhohorarios-1)
   {
 
-           
+
             horariosarray[x] =  todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][0] + todasDisciplinas[numerodisciplina]['horarios']
 
 [qualdia]['horas'][x][1] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][3] + todasDisciplinas[numerodisciplina]['horarios']
@@ -541,7 +541,7 @@ function pintarCalendarioQuinzenal(disciplina, qualdia, quinzena) //Pinta o cale
   }
   x=0; //reinicializa a variável de controle
 
-  while(x<horariosarray.length) 
+  while(x<horariosarray.length)
   {
 
       if(quinzena == 1) {
@@ -571,7 +571,7 @@ function pintarCalendarioQuinzenal(disciplina, qualdia, quinzena) //Pinta o cale
               $(seletor)[0].style.backgroundColor = "rgb(29, 40, 163)";
             }
         $(seletor)[0].classList.add(numerodisciplina);
-        if(todasDisciplinas[numerodisciplina].codigo.length > 7) 
+        if(todasDisciplinas[numerodisciplina].codigo.length > 7)
         {
           var codigodisciplina = todasDisciplinas[numerodisciplina].codigo[0] + todasDisciplinas[numerodisciplina].codigo[1] + todasDisciplinas[numerodisciplina].codigo[2] + todasDisciplinas[numerodisciplina].codigo[3] + todasDisciplinas[numerodisciplina].codigo[4] + todasDisciplinas[numerodisciplina].codigo[5] + todasDisciplinas[numerodisciplina].codigo[6];
         }
@@ -580,14 +580,14 @@ function pintarCalendarioQuinzenal(disciplina, qualdia, quinzena) //Pinta o cale
           var codigodisciplina = todasDisciplinas[numerodisciplina].codigo;
         }
 
-            
+
             $(seletor)[0].innerHTML = codigodisciplina;
         //$(seletor)[0].innerHTML = todasDisciplinas[numerodisciplina].codigo;
 
       }
 
-            
-            
+
+
             x++;
 
   }
@@ -606,12 +606,12 @@ function limpacorCalendarioQuinzenal(disciplina, qualdia, quinzena) //Limpa o ca
 
         x=0; //variável de controle
         var horariosarray = [];
-            
 
-  while(x<tamanhohorarios-1) 
+
+  while(x<tamanhohorarios-1)
   {
 
-           
+
             horariosarray[x] =  todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][0] + todasDisciplinas[numerodisciplina]['horarios']
 
 [qualdia]['horas'][x][1] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][3] + todasDisciplinas[numerodisciplina]['horarios']
@@ -623,7 +623,7 @@ function limpacorCalendarioQuinzenal(disciplina, qualdia, quinzena) //Limpa o ca
   }
   x=0; //reinicializa a variável de controle
 
-  while(x<horariosarray.length) 
+  while(x<horariosarray.length)
   {
     if(quinzena == 1){
 
@@ -641,11 +641,11 @@ function limpacorCalendarioQuinzenal(disciplina, qualdia, quinzena) //Limpa o ca
       $(seletor)[0].innerHTML = "";
 
     }
-    
+
     x++;
-            
-            
-         
+
+
+
 
   }
 
@@ -662,56 +662,56 @@ function disciplinaConflitanteQuinzenal(disciplina, qualdia, quinzena) //Verific
 
           x=0; //variável de controle
           var horariosarray = [];
-            
 
-  while(x<tamanhohorarios-1) 
+
+  while(x<tamanhohorarios-1)
   {
 
-           
+
             horariosarray[x] =  todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][0] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][1] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][3] + todasDisciplinas[numerodisciplina]['horarios'][qualdia]['horas'][x][4];
             x = x+1;
 
 
   }
-          
+
           x=0;
 
-  while(x<tamanhohorarios-1) 
+  while(x<tamanhohorarios-1)
   {
 
     if(quinzena == 1)
 {//1
       var seletor = "." + "quinzenaum_" + dia + "_" + horariosarray[x];
-      if($(seletor)[0].style.backgroundColor == "rgb(0, 100, 0)" || $(seletor)[0].style.backgroundColor == "rgb(29, 40, 163)")   
+      if($(seletor)[0].style.backgroundColor == "rgb(0, 100, 0)" || $(seletor)[0].style.backgroundColor == "rgb(29, 40, 163)")
     {//2
-      
+
     break;
 
     }//2
 
-    else 
+    else
     {//3
 
     return false;
-  
+
     }//3
 }//1
 
     if(quinzena == 2)
     {//4
       var seletor = "." + "quinzenadois_" + dia + "_" + horariosarray[x];
-      if($(seletor)[0].style.backgroundColor == "rgb(0, 100, 0)" || $(seletor)[0].style.backgroundColor == "rgb(29, 40, 163)")   
+      if($(seletor)[0].style.backgroundColor == "rgb(0, 100, 0)" || $(seletor)[0].style.backgroundColor == "rgb(29, 40, 163)")
       {//5
-      
+
       break;
 
       }//5
 
-      else 
+      else
       {//6
 
       return false;
-  
+
       }//6
 
     }//4
@@ -731,21 +731,21 @@ var valorbuscaconvertido = valorbusca.toUpperCase();
 x=0//Variável de controle
 qtddisciplinas = $('#tabeladisciplinas > tr > td:nth-child(2)').length;
 
-while(x < qtddisciplinas) 
+while(x < qtddisciplinas)
 {
   var valorbuscado = $('#tabeladisciplinas > tr > td:nth-child(3)')[x].innerHTML.toUpperCase().indexOf(valorbuscaconvertido);
 
-  if(valorbuscado != -1) 
+  if(valorbuscado != -1)
   {
 
   $('#tabeladisciplinas > tr')[x].style.display = "";
 
   }
 
-  else 
+  else
   {
   $('#tabeladisciplinas > tr')[x].style.display = "none";
-  
+
   }
 
 x++;
@@ -767,13 +767,13 @@ function buscaCampus(campus) //Função do filtro de busca por campus
 
 qtddisciplinas = $('#tabeladisciplinas > tr > td:nth-child(2)').length;
 
-  while(x < qtddisciplinas) 
+  while(x < qtddisciplinas)
   {
-  
-    if(campus == "sa") 
+
+    if(campus == "sa")
     {
       var comparativo = "Santo André";
-      if($('#tabeladisciplinas > tr > td:nth-child(3)')[x].innerHTML.indexOf(comparativo) != -1) 
+      if($('#tabeladisciplinas > tr > td:nth-child(3)')[x].innerHTML.indexOf(comparativo) != -1)
       {
         //Não fazer nada se a disciplina for de Santo André
       }
@@ -783,10 +783,10 @@ qtddisciplinas = $('#tabeladisciplinas > tr > td:nth-child(2)').length;
       }
     }
 
-    else if(campus == "sbc") 
+    else if(campus == "sbc")
     {
       var comparativo = "São Bernardo";
-      if($('#tabeladisciplinas > tr > td:nth-child(3)')[x].innerHTML.indexOf(comparativo) != -1) 
+      if($('#tabeladisciplinas > tr > td:nth-child(3)')[x].innerHTML.indexOf(comparativo) != -1)
       {
         //Não fazer nada se a disciplina for de São Bernardo
       }
@@ -795,7 +795,7 @@ qtddisciplinas = $('#tabeladisciplinas > tr > td:nth-child(2)').length;
         $('#tabeladisciplinas > tr')[x].style.display = "none"; //Esconder se for de Santo André
       }
     }
-  
+
     x++;
 
   }
@@ -813,20 +813,20 @@ x=0; //Variável de controle
 
 qtddisciplinas = $('#tabeladisciplinas > tr > td:nth-child(2)').length;
 
-  while(x < qtddisciplinas) 
+  while(x < qtddisciplinas)
   {
-  
+
       var normalizadorvagas = "input[id=" + x + "]"; //Pega o número do todasDisciplinas
       var selecionadisciplina = $(normalizadorvagas)[0].value; //Pega o id
-      var montarqtdvagas = "tr[value=" + selecionadisciplina + "]" + ">td[value=" + selecionadisciplina + "]"; 
+      var montarqtdvagas = "tr[value=" + selecionadisciplina + "]" + ">td[value=" + selecionadisciplina + "]";
       var qtdvagas = $(montarqtdvagas)[0].innerHTML;
       var qtdrequisicoes = $(montarqtdvagas)[1].innerHTML;
-      
 
 
-      if(qtdvagas > qtdrequisicoes) 
+
+      if(qtdvagas > qtdrequisicoes)
       {
-        //Não fazer nada 
+        //Não fazer nada
       }
       else
       {
@@ -842,10 +842,10 @@ qtddisciplinas = $('#tabeladisciplinas > tr > td:nth-child(2)').length;
 
 //Não está sendo utilizada
 /*
-function mostrarfiltros() 
+function mostrarfiltros()
 {
 
-  if($('#filtros')[0].style.display == "") 
+  if($('#filtros')[0].style.display == "")
   {
 
     $('#filtros')[0].style.display = "block";
@@ -876,7 +876,7 @@ function organizaDisciplinas() //Organiza as disciplinas de acordo com o curso s
 
   $('select')[0].disabled = false;
 
-  
+
 
   //TODO arrumar essa porquice
   $('table#tabeladisciplinas')[0].innerHTML = '';
@@ -895,8 +895,8 @@ var i=0;  //variável de controle
 
 Tarefa 1 => Listar as disciplinas
 
-Enquanto a variável de controle for menor do que a quantidade total de 
-disciplinas ofertadas, será executada a função abaixo: 
+Enquanto a variável de controle for menor do que a quantidade total de
+disciplinas ofertadas, será executada a função abaixo:
 
 */
 
@@ -929,18 +929,18 @@ while(cc<todasDisciplinas[i].codigo.length)
 
     while(u<(todasDisciplinas[i]['horarios'][p]['horas'].length-1))
     {
-     
 
-      
+
+
         tr.className = tr.className + "quinzenaum" + todasDisciplinas[i]['horarios'][p]['semana'] + "_" + todasDisciplinas[i]['horarios'][p]['horas'][u][0] + todasDisciplinas[i]['horarios'][p]['horas'][u][1] + todasDisciplinas[i]['horarios'][p]['horas'][u][3] + todasDisciplinas[i]['horarios'][p]['horas'][u][4] + " quinzenadois" + todasDisciplinas[i]['horarios'][p]['semana'] + "_" + todasDisciplinas[i]['horarios'][p]['horas'][u][0] + todasDisciplinas[i]['horarios'][p]['horas'][u][1] + todasDisciplinas[i]['horarios'][p]['horas'][u][3] + todasDisciplinas[i]['horarios'][p]['horas'][u][4] + " ";
         u++;
       }
 
-      
+
 
       tr.className = tr.className + codigodisciplina + " ";
-    
-    
+
+
 
   }
 
@@ -949,17 +949,17 @@ while(cc<todasDisciplinas[i].codigo.length)
      var u = 0; //Variável de controle
 
     while(u<todasDisciplinas[i]['horarios'][p]['horas'].length-1)
-    {  
-   
+    {
+
         tr.className = tr.className + "quinzenaum" + todasDisciplinas[i]['horarios'][p]['semana'] + "_" + todasDisciplinas[i]['horarios'][p]['horas'][u][0] + todasDisciplinas[i]['horarios'][p]['horas'][u][1] + todasDisciplinas[i]['horarios'][p]['horas'][u][3] + todasDisciplinas[i]['horarios'][p]['horas'][u][4] + " ";
         u++;
     }
 
-      
+
 
 
     tr.className = tr.className + codigodisciplina;
-    
+
 
   }
 
@@ -968,34 +968,34 @@ while(cc<todasDisciplinas[i].codigo.length)
      var u = 0; //Variável de controle
 
     while(u<todasDisciplinas[i]['horarios'][p]['horas'].length-1)
-    {  
-   
+    {
+
         tr.className = tr.className + "quinzenadois" + todasDisciplinas[i]['horarios'][p]['semana'] + "_" + todasDisciplinas[i]['horarios'][p]['horas'][u][0] + todasDisciplinas[i]['horarios'][p]['horas'][u][1] + todasDisciplinas[i]['horarios'][p]['horas'][u][3] + todasDisciplinas[i]['horarios'][p]['horas'][u][4] + " ";
         u++;
     }
 
-      
+
 
     tr.className = tr.className + codigodisciplina;
-    
-    
+
+
 
   }
 
 
 
-  
 
- 
+
+
   p++;
 
 }
 
 
 
-  
 
-  
+
+
 
 
 
@@ -1080,12 +1080,12 @@ if((periodoMatricula || periodoSegundoQuadrimestre) && todasDisciplinas[i].vagas
   if(alunoIngressante)
    {
 
-    if(contagemMatriculasIngressantes[todasDisciplinas[i].id] == undefined) 
+    if(contagemMatriculasIngressantes[todasDisciplinas[i].id] == undefined)
     {
 
     td[4].textContent = 0;
      }
-    else 
+    else
     {
     td[4].textContent = contagemMatriculasIngressantes[todasDisciplinas[i].id];
     }
@@ -1104,12 +1104,12 @@ if((periodoMatricula || periodoSegundoQuadrimestre) && todasDisciplinas[i].vagas
 
    }
 
-  /*if(contagemMatriculasIngressantes[todasDisciplinas[i].id] == undefined) 
+  /*if(contagemMatriculasIngressantes[todasDisciplinas[i].id] == undefined)
   {
 
     td[4].textContent = 0;
   }
-  else 
+  else
   {
     td[4].textContent = contagemMatriculasIngressantes[todasDisciplinas[i].id];
   }
@@ -1119,18 +1119,18 @@ if((periodoMatricula || periodoSegundoQuadrimestre) && todasDisciplinas[i].vagas
 
 else
 {
-  if(contagemMatriculas[todasDisciplinas[i].id] == undefined) 
+  if(contagemMatriculas[todasDisciplinas[i].id] == undefined)
   {
 
     td[4].textContent = 0;
   }
 
-  else 
+  else
   {
 
     td[4].textContent = contagemMatriculas[todasDisciplinas[i].id];
-  
-  } 
+
+  }
 
 }
 
@@ -1143,7 +1143,7 @@ td[5].textContent = "(" + todasDisciplinas[i].tpi[0]+"-"+todasDisciplinas[i].tpi
 
 /* Vincula os dias da semana e horários das disciplinas */
 
-/* Verifica, inicialmente, qual é a quantidade total de dias da disciplina, 
+/* Verifica, inicialmente, qual é a quantidade total de dias da disciplina,
 após isso, identifica quais são os dias em que a disciplina é ministrada.
 
 */
@@ -1173,7 +1173,7 @@ else if(todasDisciplinas[i]["horarios"].length == 2) {
   var horario1 = verificaHora(todasDisciplinas[i], 0);
   var periodicidade1 = verificaPeriodicidade(todasDisciplinas[i], 0);
   var horariofechado1 = dia1 + horario1 + periodicidade1;
-  
+
 
   var dia2 = verificaDia(todasDisciplinas[i], 1);
   var horario2 = verificaHora(todasDisciplinas[i], 1);
@@ -1194,7 +1194,7 @@ else if(todasDisciplinas[i]["horarios"].length == 3) {
   var horario1 = verificaHora(todasDisciplinas[i], 0);
   var periodicidade1 = verificaPeriodicidade(todasDisciplinas[i], 0);
   var horariofechado1 = dia1 + horario1 + periodicidade1;
-  
+
 
   var dia2 = verificaDia(todasDisciplinas[i], 1);
   var horario2 = verificaHora(todasDisciplinas[i], 1);
@@ -1212,14 +1212,14 @@ else if(todasDisciplinas[i]["horarios"].length == 3) {
 
 }
 
-else if(todasDisciplinas[i]["horarios"].length == 4) 
+else if(todasDisciplinas[i]["horarios"].length == 4)
 {
 
   var dia1 = verificaDia(todasDisciplinas[i], 0);
   var horario1 = verificaHora(todasDisciplinas[i], 0);
   var periodicidade1 = verificaPeriodicidade(todasDisciplinas[i], 0);
   var horariofechado1 = dia1 + horario1 + periodicidade1;
-  
+
 
   var dia2 = verificaDia(todasDisciplinas[i], 1);
   var horario2 = verificaHora(todasDisciplinas[i], 1);
@@ -1243,14 +1243,14 @@ else if(todasDisciplinas[i]["horarios"].length == 4)
 
 }
 
-else if(todasDisciplinas[i]["horarios"].length == 5) 
+else if(todasDisciplinas[i]["horarios"].length == 5)
 {
 
   var dia1 = verificaDia(todasDisciplinas[i], 0);
   var horario1 = verificaHora(todasDisciplinas[i], 0);
   var periodicidade1 = verificaPeriodicidade(todasDisciplinas[i], 0);
   var horariofechado1 = dia1 + horario1 + periodicidade1;
-  
+
 
   var dia2 = verificaDia(todasDisciplinas[i], 1);
   var horario2 = verificaHora(todasDisciplinas[i], 1);
@@ -1308,16 +1308,16 @@ else if(obrigatoriedades >= 1)
 {
 
 while(x<obrigatoriedades){
-  if (todasDisciplinas[i].obrigatoriedades[x].curso_id == cursoselecionado && todasDisciplinas[i].obrigatoriedades[x].obrigatoriedade == "obrigatoria") 
+  if (todasDisciplinas[i].obrigatoriedades[x].curso_id == cursoselecionado && todasDisciplinas[i].obrigatoriedades[x].obrigatoriedade == "obrigatoria")
   {
 
-    
+
     $('div#disciplinasobrigatorias>table')[0].appendChild(tr);
     break;
 
   }
 
-  else if(todasDisciplinas[i].obrigatoriedades[x].curso_id == cursoselecionado && todasDisciplinas[i].obrigatoriedades[x].obrigatoriedade == "limitada") 
+  else if(todasDisciplinas[i].obrigatoriedades[x].curso_id == cursoselecionado && todasDisciplinas[i].obrigatoriedades[x].obrigatoriedade == "limitada")
   {
 
      $('div#disciplinaslimitadas>table')[0].appendChild(tr);
@@ -1325,16 +1325,16 @@ while(x<obrigatoriedades){
 
   }
 
-  else if(x == (obrigatoriedades-1)) 
+  else if(x == (obrigatoriedades-1))
   {
 
        $('div#disciplinaslivres>table')[0].appendChild(tr);
-      
+
 
   }
 
 
-  
+
   x++;
 }
 }
@@ -1357,7 +1357,7 @@ while(x<disciplinas.length)
 
       var input = "input[value=" + disciplinas[x] + "]"; //Alterado
       var normalizador = $(input)[0];
-      validaLinha(normalizador); 
+      validaLinha(normalizador);
       x++;
 
 }
@@ -1385,7 +1385,7 @@ function insereDisciplina(iddisciplina) //Insere disciplina no array disciplinas
 
   }*/
   mesmaDisciplina(); //Insere a classe nas disciplinas selecionadas.
-  
+
 }
 
 function insereCodigo(codigo)
@@ -1399,7 +1399,7 @@ function removeCodigo(codigo) //Remove disciplina do array disciplinas e remove 
 {
 
   var index = codigosdisciplinas.indexOf(codigo);
-  if (index > -1) 
+  if (index > -1)
   {
     codigosdisciplinas.splice(index, 1);
   }
@@ -1423,7 +1423,7 @@ function mesmaDisciplina() //Insere a classe mesmadisciplina
     valorseletor.classList.add("mesmadisciplina");
 
     x++;
-  }  
+  }
 
 }
 
@@ -1431,7 +1431,7 @@ function removeDisciplina(iddisciplina) //Remove disciplina do array disciplinas
 {
 
   var index = disciplinas.indexOf(iddisciplina);
-  if (index > -1) 
+  if (index > -1)
   {
     disciplinas.splice(index, 1);
   }
@@ -1448,7 +1448,7 @@ function repreencherDisciplinas() //Pega as disciplinas da array disciplinas e p
 {
 
   var i = 0 //Variável de controle
-  while(i<disciplinas.length) 
+  while(i<disciplinas.length)
   {
     var preencher = disciplinas[i];
     var arrumando = "input[value=" + preencher + "]";
@@ -1471,7 +1471,7 @@ function validaLinha(elem) //Adiciona e remove os conflitos entre as linhas da t
   var iddisciplina = elem.value;
   var normalizador = "tr[value=" + iddisciplina + "]";
   var tamanhoarrayclasses = $(normalizador)[0].classList.length;
-  
+
   i=0; //Variável de controle
   w=0; //Variável de controle
 
@@ -1495,7 +1495,7 @@ function validaLinha(elem) //Adiciona e remove os conflitos entre as linhas da t
               this.classList.add("disciplinaconflito");
 
               });
-              
+
 
             }
 
@@ -1535,7 +1535,7 @@ function validaLinha(elem) //Adiciona e remove os conflitos entre as linhas da t
               this.classList.remove("disciplinaconflito");
 
               });
-              
+
 
             }
 
@@ -1557,7 +1557,6 @@ function validaLinha(elem) //Adiciona e remove os conflitos entre as linhas da t
 
   }
 
-  
 
 
 
@@ -1570,9 +1569,10 @@ function validaLinha(elem) //Adiciona e remove os conflitos entre as linhas da t
 
 
 
-  
 
-  
+
+
+
 
 
 }
@@ -1581,7 +1581,7 @@ function validaLinha(elem) //Adiciona e remove os conflitos entre as linhas da t
 function organizaHorarios(disciplina) //Monta os horários das disciplinas e os organiza
 {
 
-  
+
 var qtddias = disciplina["horarios"].length;
 var o = 0; //Variável de controle
 var dias = [];
@@ -1589,7 +1589,7 @@ var horarios = [];
 var periodicidades = [];
 var horariofechado = [];
 
-  
+
 while(o<qtddias)
 {
 
@@ -1602,9 +1602,9 @@ periodicidades.push(verificaPeriodicidade(disciplina, 0));
 
 
 
-  
+
 o++;
-      
+
 
 
 }
@@ -1618,7 +1618,7 @@ if(dias.length == 1)
 
 }
 
-else 
+else
 {
 
   while(p<dias.length)
@@ -1634,13 +1634,13 @@ else
 
 }
 
-function removeClasses() 
+function removeClasses()
 {
 
-  var resultadomesmadisciplina = $(".mesmadisciplina"); 
+  var resultadomesmadisciplina = $(".mesmadisciplina");
   resultadomesmadisciplina.each(function x(){this.classList.remove('mesmadisciplina')});
 
-  var resultadoconflito = $(".disciplinaconflito"); 
+  var resultadoconflito = $(".disciplinaconflito");
   resultadoconflito.each(function x(){this.classList.remove('disciplinaconflito')});
 
   var resultadocodigo = $(".mesmocodigo");
@@ -1665,34 +1665,34 @@ function controlaMesmoCodigo()
 }
 
 
-/*function insereTPI(elem) 
+/*function insereTPI(elem)
 {
 
   var id = elem.id;
   creditospegos = creditospegos + todasDisciplinas[id].tpi[0] + todasDisciplinas[id].tpi[1];
-  
+
 
 
 }
 
-function removeTPI(elem) 
+function removeTPI(elem)
 {
 
   var id = elem.id;
   creditospegos = creditospegos - todasDisciplinas[id].tpi[0] - todasDisciplinas[id].tpi[1];
-  
+
 
 
 }
 
-function atualizaTPI() 
+function atualizaTPI()
 {
   $("#atualiza").innerHTML = creditospegos;
 
 }
 */
 
-function atualizaTPI() 
+function atualizaTPI()
 {
 
   var controle = 0;

@@ -2,16 +2,16 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
 
 {
 
-      
+
       var quantidadedias = quantosDias(elem);
-      var numerodisciplina = ($(elem)[0]['id']);  
+      var numerodisciplina = ($(elem)[0]['id']);
       var iddisciplina = ($(elem)[0]['value']);
       var i = 0; //variável de controle
       var controlaalerta = [];
       var controlaconflito = [];
       var controladisciplinarepetida = [];
       var controlapintar = [];
-      
+
 
   var bb = 0;
   var codigodisciplina = "";
@@ -24,14 +24,14 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
   bb++;
   }
 
-      while(i<quantidadedias) 
+      while(i<quantidadedias)
 
       {
             if(periodicidadeDisciplina(elem, i) == " - semanal") //Se for semanal
 
             {
 
-            
+
                  if(disciplinaConflitanteSemanal(elem, i) == false)  //Se não der conflito
                  {
 
@@ -39,9 +39,9 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
                       //pintarCalendarioSemanal(elem, 0);
 
                  }
-                 else 
+                 else
                  {
-                      if(verificaDisciplinaSelecionada(elem, i)) 
+                      if(verificaDisciplinaSelecionada(elem, i))
                       {
                         controladisciplinarepetida[i] = "repetidasemanal";
                         //limpacorCalendarioSemanal(elem, i);
@@ -49,7 +49,7 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
                       else
                       {
                         controlaalerta[i] = "ativaralerta";
-                        
+
                         //alertaCalendario(elem);
                       }
                  }
@@ -59,16 +59,16 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
             else if(periodicidadeDisciplina(elem, i) == " - quinzenal (I)")  //Se for quinzena 1
             {
 
-                 if(disciplinaConflitanteQuinzenal(elem, i, 1) == false)  
+                 if(disciplinaConflitanteQuinzenal(elem, i, 1) == false)
                  {
 
                   controlapintar[i] = "quinzena1";
                   //pintarCalendarioQuinzenal(elem, i, 1);
 
                  }
-                 else 
+                 else
                  {
-                      if(verificaDisciplinaSelecionada(elem, i)) 
+                      if(verificaDisciplinaSelecionada(elem, i))
                       {
                         controladisciplinarepetida[i] = "repetidaquinzena1";
                         //limpacorCalendarioQuinzenal(elem, i, 1);
@@ -76,7 +76,7 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
                       else
                       {
                         controlaalerta[i] = "ativaralerta";
-                        
+
                         //alertaCalendario(elem);
 
                       }
@@ -87,16 +87,16 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
             else if(periodicidadeDisciplina(elem, i) == " - quinzenal (II)")  //Se for quinzena 2
             {
 
-                 if(disciplinaConflitanteQuinzenal(elem, i, 2) == false)  
+                 if(disciplinaConflitanteQuinzenal(elem, i, 2) == false)
                  {
 
                   controlapintar[i] = "quinzena2";
                   //pintarCalendarioQuinzenal(elem, i, 2);
 
                  }
-                 else 
+                 else
                  {
-                      if(verificaDisciplinaSelecionada(elem, i)) 
+                      if(verificaDisciplinaSelecionada(elem, i))
                       {
                         controladisciplinarepetida[i] = "repetidaquinzena2";
                         //limpacorCalendarioQuinzenal(elem, i, 2);
@@ -104,23 +104,23 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
                       else
                       {
                         controlaalerta[i] = "ativaralerta";
-                        
+
                         //alertaCalendario(elem);
                       }
                  }
 
             }
 
-            
-            
+
+
             i++;
 
       }
-      
+
       i=0;
       var ativaralerta = false;
-      
-      while(i<quantidadedias) 
+
+      while(i<quantidadedias)
       {
 
             if(ativaralerta == true)
@@ -130,7 +130,7 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
 
             }
 
-            else 
+            else
             {
                   if(controlaalerta[i] == "ativaralerta")
                   {
@@ -153,7 +153,7 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
 
       }
 
-      else if(ativaralerta == false) 
+      else if(ativaralerta == false)
       {
             i=0; //Reinicializa a variável de controle
 
@@ -183,21 +183,21 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
                   }
                   removeDisciplina(iddisciplina);
                   removeCodigo(codigodisciplina);
-                  
+
             }
 
             else
             {
                   insereDisciplina(iddisciplina);
                   insereCodigo(codigodisciplina);
-                  
+
                   i=0;
                   while(i<quantidadedias)
                   {
                         if(controlapintar[i] == "semanal")
                         {
                              pintarCalendarioSemanal(elem, i);
-                            // validaLinha(elem); 
+                            // validaLinha(elem);
                         }
                         else if(controlapintar[i] == "quinzena1")
                         {
@@ -231,7 +231,7 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
 
   }
   */
-      
+
 
       //validaLinha(elem);
 
@@ -244,11 +244,11 @@ function verificacao(elem) //Faz a verificação de conflitos do calendário
         validaLinha($(normalizador)[0]);
         controle++;
       }
-      
+
       mesmaDisciplina();
       controlaMesmoCodigo();
       atualizaTPI();
-      
+
 
 
 }
@@ -298,7 +298,7 @@ function aplicarfiltros() //Aplica os filtros utilizados
 
   buscaTurno("noturno");
 
-  } 
+  }
 
 
   if($('#maisvagas')[0].checked == true)

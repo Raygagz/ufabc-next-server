@@ -7,10 +7,10 @@ function findQuadFromDate(month) {
 module.exports = function findIdeais(date = new Date()) {
   const month = date.getMonth()
   return {
-    1 : 
+    1 :
     [
       'BCM0506-15', // COMUNICACAO E REDES
-      'BCJ0203-15', // ELETROMAG 
+      'BCJ0203-15', // ELETROMAG
       'BIN0406-15', // IPE
       'BCN0405-15', // IEDO
       'BIR0004-15', // EPISTEMOLOGICAS

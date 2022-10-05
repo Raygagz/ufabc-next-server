@@ -14,7 +14,7 @@ async function ruleDeny() {
 }
 
 describe('helpers/routes.rule', function () {
-  it('should proceed with callback', function(cb) {    
+  it('should proceed with callback', function(cb) {
     let wrapped = rule(ruleAllow)
 
     wrapped({}, {}, (err) => {
@@ -25,7 +25,7 @@ describe('helpers/routes.rule', function () {
     })
   })
 
-  it('should not proceed with callback', function(cb) {    
+  it('should not proceed with callback', function(cb) {
     let wrapped = rule(ruleDeny)
 
     wrapped({}, {}, (err) => {
@@ -36,7 +36,7 @@ describe('helpers/routes.rule', function () {
     })
   })
 
-  it('should allow depending on context', function(cb) {    
+  it('should allow depending on context', function(cb) {
     let wrapped = rule(ruleAllowByContext)
 
     wrapped({allow: false}, {}, (err) => {
@@ -47,7 +47,7 @@ describe('helpers/routes.rule', function () {
     })
   })
 
-  it('should deny depending on context', function(cb) {    
+  it('should deny depending on context', function(cb) {
     let wrapped = rule(ruleAllowByContext)
 
     wrapped({allow: true}, {}, (err) => {

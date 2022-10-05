@@ -28,4 +28,4 @@ describe('toNumber', function () {
         assert.equal(767.35, toNumber('767.35'))
     })
   })
-}) 
+})

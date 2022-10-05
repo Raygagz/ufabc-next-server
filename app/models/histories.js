@@ -28,7 +28,7 @@ Model.pre('findOneAndUpdate', async function () {
     'free_credits_number',
     'credits_total'
   ])
-  
+
   app.agenda.now('updateUserEnrollments', update)
 })
 

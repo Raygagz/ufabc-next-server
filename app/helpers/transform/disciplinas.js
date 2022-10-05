@@ -21,13 +21,13 @@ module.exports = function convertDisciplina(d) {
     obj.horarios = removeLineBreaks(obj.horarios)
 
     const matched = obj.horarios.match(/\d{2}:\d{2}/g)
-    
+
     // only match if is even
     if(matched.length % 2 == 0) {
       let hours = _.chunk(matched, 2)
       hours.forEach(m => {
         let [start] = m.map(h => parseInt(h.split(':')[0]))
-        
+
         if(start >= 12 && start < 18) {
           afterNoon = true
         }
@@ -79,14 +79,14 @@ module.exports = function convertDisciplina(d) {
   if(obj.codigo != null) {
     obj.ideal_quad = app.helpers.season.findIdeais().includes(obj.codigo)
   }
-  
+
   if(obj.teoria == '0' || obj.teoria == '') obj.teoria = null
   if(obj.pratica == '0' || obj.pratica == '') obj.pratica = null
 
   if(obj.teoria != null) obj.teoria = cleanTeacher(removeLineBreaks(obj.teoria))
   if(obj.pratica != null) obj.pratica = cleanTeacher(removeLineBreaks(obj.pratica))
 
-  return obj  
+  return obj
 }
 
 function cleanTeacher(str){

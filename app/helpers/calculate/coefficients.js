@@ -40,7 +40,7 @@ module.exports = function calculateAlunoCoefficientsData(disciplinas, graduation
 
         const category = parseCategory(current_disciplina.categoria)
 
-        if(category && isAprovado(current_disciplina.conceito)) {        
+        if(category && isAprovado(current_disciplina.conceito)) {
           if(category == 'free') credits_free += creditos
           if(category == 'mandatory') credits_mandatory += creditos
           if(category == 'limited') credits_limited += creditos

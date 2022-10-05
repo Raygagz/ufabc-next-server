@@ -22,7 +22,7 @@ module.exports = async function (context) {
 
   // check which teachers from pdf or xls are missing
   const errors = app.helpers.validate.teachers(disciplinas)
- 
+
   // create hash
   const disciplinaHash = crypto.createHash('md5').update(JSON.stringify(disciplinas)).digest('hex')
   if(disciplinaHash != hash) {
@@ -33,7 +33,7 @@ module.exports = async function (context) {
     }
   }
 
-  const identifierKeys = ['disciplina', 'turno', 'campus', 'turma'] 
+  const identifierKeys = ['disciplina', 'turno', 'campus', 'turma']
 
   async function updateDisciplinas(disciplina){
     // find and update disciplina
@@ -49,7 +49,7 @@ module.exports = async function (context) {
 
   const start = Date.now()
   disciplinas = await app.helpers.mapLimit(disciplinas, updateDisciplinas, 15)
-  
+
   // clear cache for this season
   const cacheKey = `todasDisciplinas_${season}`
   await app.redis.cache.del(cacheKey)

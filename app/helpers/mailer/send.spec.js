@@ -42,7 +42,7 @@ describe('HELPER mailer/send', async function(){
     const email = [{
       recipient: 'email@test.com',
       body: { name: 'My name' }
-    }, { 
+    }, {
       recipient: 'email2@test.com'
     }]
 

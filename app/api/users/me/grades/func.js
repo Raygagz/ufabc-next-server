@@ -29,10 +29,10 @@ function normalizeHistory(history) {
   Object.keys(history).forEach(key => {
     const year = history[key]
     Object.keys(year).forEach(month => {
-      total.push(_.extend(year[month], { 
-        season: `${key}:${month}`, 
-        quad: parseInt(month), 
-        year: parseInt(key) 
+      total.push(_.extend(year[month], {
+        season: `${key}:${month}`,
+        quad: parseInt(month),
+        year: parseInt(key)
       }))
     })
   })

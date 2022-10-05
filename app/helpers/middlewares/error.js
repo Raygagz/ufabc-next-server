@@ -24,7 +24,7 @@ module.exports = (err, req, res, next) => {
     // Prepare response to user
     body.type = 'FatalError'
     body.error = 'Um erro inesperado aconteceu e foi enviado aos nossos desenvolvedores'
-    
+
     // Get user agent
     const ua = _.pick(parser(req.headers['user-agent']), ['browser', 'os'])
     if(ua.os && ua.os.name) {
@@ -35,7 +35,7 @@ module.exports = (err, req, res, next) => {
   }
 
   if (!app.config.isProduction && body.status == 500) {
-    console.log(err) 
+    console.log(err)
   }
 
   // Send back error

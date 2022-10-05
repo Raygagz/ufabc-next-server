@@ -5,7 +5,7 @@ module.exports = Schema({
   coefficients: Object,
 
   disciplinas: Object,
-  
+
   curso: String,
   grade: String,
   graduation: {

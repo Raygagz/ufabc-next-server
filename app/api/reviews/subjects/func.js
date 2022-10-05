@@ -19,14 +19,14 @@ module.exports = async function (context) {
   subjectId = mongoose.Types.ObjectId(subjectId)
 
   let stats = await app.models.enrollments.aggregate([
-    { 
+    {
       $match: {
         subject: subjectId,
-        conceito: { $in: ['A', 'B', 'C', 'D', 'O', 'F'] } 
-      } 
+        conceito: { $in: ['A', 'B', 'C', 'D', 'O', 'F'] }
+      }
     },
     {
-      $group: { 
+      $group: {
         _id: {
           mainTeacher: '$mainTeacher',
           conceito: '$conceito',
@@ -71,7 +71,7 @@ module.exports = async function (context) {
         amount: { $size: '$crs' },
       }
     },
-    { 
+    {
       $group: {
         _id: {
           mainTeacher: '$_id.mainTeacher',
@@ -86,7 +86,7 @@ module.exports = async function (context) {
             numericWeight: { $multiply: ['$amount', '$weight'] },
             amount: '$amount',
           }
-        }, 
+        },
         numericWeight: { $sum : { $multiply: ['$amount', '$weight'] } },
         numeric: { $sum : { $multiply: ['$amount', '$cr_medio'] } },
         amount: { $sum: '$amount' },
@@ -98,7 +98,7 @@ module.exports = async function (context) {
         numericWeight: 1,
         numeric: 1,
         amount: 1,
-        count: 1, 
+        count: 1,
         cr_professor: { $cond: [ { $eq: [ '$amount', 0 ] }, 'N/A', { '$divide': ['$numericWeight', '$amount'] } ] },
         teacher: '$_id.mainTeacher'
       }

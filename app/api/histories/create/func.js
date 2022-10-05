@@ -3,13 +3,13 @@ const errors = require('@/errors');
 const moment = require('moment');
 
 module.exports = async function (context) {
-  const { 
-    ra, 
-    grade, 
-    mandatory_credits_number, 
-    limited_credits_number, 
-    free_credits_number, 
-    credits_total 
+  const {
+    ra,
+    grade,
+    mandatory_credits_number,
+    limited_credits_number,
+    free_credits_number,
+    credits_total
   } = context.body
   let { curso } = context.body
 
@@ -22,7 +22,7 @@ module.exports = async function (context) {
     context.body.curso = "Bacharelado em Ciências e Humanidades"
   }
 
-  if(curso && grade) {  
+  if(curso && grade) {
     const graduation = {
       locked: false,
       name: curso,
@@ -38,7 +38,7 @@ module.exports = async function (context) {
     }
 
     if(free_credits_number > 0){
-      graduation.free_credits_number = free_credits_number 
+      graduation.free_credits_number = free_credits_number
     }
 
     if(credits_total > 0){

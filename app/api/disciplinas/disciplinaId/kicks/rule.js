@@ -6,7 +6,7 @@ module.exports = async function (context) {
 
   const season = app.helpers.season.findSeasonKey()
   const Alunos = app.models.alunos.bySeason(season)
-  
+
   const aluno = await Alunos.findOne({ aluno_id }).lean(true)
 
   if(aluno) {

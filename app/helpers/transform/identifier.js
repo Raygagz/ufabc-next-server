@@ -2,7 +2,7 @@ const _ = require('lodash')
 const crypto = require('crypto')
 
 module.exports = function(disciplina, keys, silent = true) {
-  keys = keys || ['disciplina', 'turno', 'campus', 'turma'] 
+  keys = keys || ['disciplina', 'turno', 'campus', 'turma']
 
   let d = _(disciplina || {})
     .pick(keys)

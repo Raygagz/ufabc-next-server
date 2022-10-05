@@ -38,7 +38,7 @@ async function walkModels(app, schemas) {
       models[name] = Schema
     }
   }
-  
+
   return models
 }
 

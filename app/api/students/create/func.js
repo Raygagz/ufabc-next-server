@@ -57,7 +57,7 @@ module.exports = async (context) => {
         updatedAt: -1,
       });
       cpBeforePandemic = _.get(history, "coefficients.2019.3.cp_acumulado", null);
-      
+
       // Sum cp before pandemic + cp after freezed
       let cpFreezed = _.get(history, "coefficients.2021.2.cp_acumulado", null);
       let cpLastQuadAfterFreeze = _.get(history, "coefficients.2022.1.cp_acumulado", null);
@@ -77,7 +77,7 @@ module.exports = async (context) => {
     } else {
       finalCP = Math.min(Number((cpBeforePandemic + cpTotal).toFixed(3)), 1)
     }
-    
+
     c.cr = _.isFinite(c.cr) ? app.helpers.parse.toNumber(c.cr) : 0;
     c.cp = _.isFinite(c.cp) ? app.helpers.parse.toNumber(finalCP) : 0;
     c.quads = _.isFinite(c.quads) ? app.helpers.parse.toNumber(c.quads) : 0;

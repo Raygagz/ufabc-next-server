@@ -6,6 +6,6 @@ module.exports = async (context) => {
   if (permissions.includes('user:write')) {
     return
   }
-  
+
   throw new errors.Forbidden.MissingPermission('user:write')
 }

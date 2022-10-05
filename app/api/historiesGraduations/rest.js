@@ -4,7 +4,7 @@ const restify = require('express-restify-mongoose')
 
 async function addSelf(req, _res, next) {
   _.extend(req.query, { ra: req.user.ra })
-  
+
   if (Array.isArray(req.body)) {
     req.body.forEach(param => _.extend(param, { user: req.user.ra }))
   } else {

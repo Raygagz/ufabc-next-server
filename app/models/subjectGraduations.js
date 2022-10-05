@@ -3,7 +3,7 @@ const Schema = require('mongoose').Schema
 const Model = module.exports = Schema({
   creditos: Number,
   codigo: String,
-  
+
   year: Number,
   quad: Number,
 

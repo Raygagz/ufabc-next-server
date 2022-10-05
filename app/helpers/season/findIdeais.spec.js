@@ -6,7 +6,7 @@ describe('helpers.season.findIdeais', function() {
     it('Should return first quad courses', function () {
         const expectedCourses = [
             'BCM0506-15', // COMUNICACAO E REDES
-            'BCJ0203-15', // ELETROMAG 
+            'BCJ0203-15', // ELETROMAG
             'BIN0406-15', // IPE
             'BCN0405-15', // IEDO
             'BIR0004-15', // EPISTEMOLOGICAS
@@ -19,7 +19,7 @@ describe('helpers.season.findIdeais', function() {
             'BHQ0001-15', // IDENT.E CULTURA
           ]
         const date = new Date("2021-04-10")
-        const func = findIdeais(date)  
+        const func = findIdeais(date)
 
         expectedCourses.forEach(function (course,index) {
             assert.equal(course, func[index])

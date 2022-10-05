@@ -21,7 +21,7 @@ module.exports = async(context) => {
   const isSync = operationField == 'alunos_matriculados'
 
   const instance = Axios.create({
-    httpsAgent: new https.Agent({  
+    httpsAgent: new https.Agent({
       rejectUnauthorized: false
     })
   })
@@ -55,7 +55,7 @@ module.exports = async(context) => {
     isSync ? await app.redis.cache.set(cacheKey, payload[id]) : null
     return saved
   }
-  
+
   const start = Date.now()
   await app.helpers.mapLimit(Object.keys(payload), updateAlunosMatriculados, 15, payload)
 

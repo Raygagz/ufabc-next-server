@@ -53,7 +53,7 @@ module.exports = function parsePdfData(payload, mappings) {
         result[pos] = result[pos] ? _.extend(result[pos], prop) : prop
       })
     })
-  
+
     console.log(pagePositions)
   })
 

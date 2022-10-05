@@ -85,7 +85,7 @@ function parsePDF(buffer, params) {
           // same cell
           if(diff < 2 && position > 0) {
             tmp[position - 1].text += ' ' + decodeURIComponent(text.R[0].T)
-          } 
+          }
           // different payload
           else if(isFirst) {
             results.push(tmp)
@@ -163,9 +163,9 @@ function parsePDF(buffer, params) {
         })
 
         let cleaned = _.map(positionAverageArray, Math.floor)
-        
+
         let diff = _.difference(cleaned, tmp.map(p => p.pos))
-        
+
         if(diff.length <= 4) {
           diff.forEach(p => {
             let emptyPos = cleaned.indexOf(p)
@@ -184,7 +184,7 @@ function parsePDF(buffer, params) {
           finalResults.push(tmp)
         }
       })
-     
+
       resolve(finalResults)
     })
   })

@@ -62,12 +62,12 @@ module.exports = async function getDisciplinaStats(context) {
         requisicoes: 1,
         turma: 1,
         deficit: { $subtract: [ '$requisicoes', '$vagas' ] },
-        ratio: { $divide: [ '$requisicoes', '$vagas' ] } 
+        ratio: { $divide: [ '$requisicoes', '$vagas' ] }
       }
     },
     ...isRatio(ratio),
     ...resolveStep(action, turno, curso_id),
-    { $facet: 
+    { $facet:
       {
         total: [ { $count: 'total' }],
         data: [
@@ -113,7 +113,7 @@ function isRatio(ratio){
 
 function getOverviewSteps() {
   return [
-    { $group : 
+    { $group :
       {
         _id: null,
         vagas: { $sum : '$vagas' },
@@ -131,7 +131,7 @@ function getDisciplineSteps() {
         _id: '$codigo',
         disciplina: { $first: '$disciplina' },
         vagas: { $sum : '$vagas' },
-        requisicoes: { $sum : '$requisicoes' } 
+        requisicoes: { $sum : '$requisicoes' }
       }
     },
     { $project:
@@ -155,7 +155,7 @@ function getCourseSteps(turno, curso_id) {
   return [
     { $unwind: '$obrigatorias' },
     { $match: match },
-    { $group : 
+    { $group :
       {
         _id : '$obrigatorias',
         obrigatorias: { $first: '$obrigatorias' },

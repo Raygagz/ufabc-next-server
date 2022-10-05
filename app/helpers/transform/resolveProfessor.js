@@ -2,7 +2,7 @@ const _ = require('lodash')
 const difflib = require('difflib')
 
 module.exports = function resolveProfessor(name, teachers, mappings = {}) {
-  if (name in mappings) { 
+  if (name in mappings) {
     return mappings[name]
   }
 

@@ -10,7 +10,7 @@ describe('POST /v1/private/subjects', function() {
 
   beforeEach(async function () {
     await populate({ operation : 'remove', only: ['subjects'] })
-    
+
     context = {
       query: {},
       body: {

@@ -8,4 +8,4 @@ describe('slugify', function () {
     assert.equal('slug-teste', slugify(' SLUG         TESTE  '))
     assert.equal('slug-g-u-teste', slugify(' SLUG   [Ĝ]  [Ự]      TESTE  '))
   })
-}) 
+})

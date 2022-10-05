@@ -1,5 +1,5 @@
 /*
- * Redirect requests in production to https. 
+ * Redirect requests in production to https.
  * Block requests without host.
  */
 module.exports = async (app) => {

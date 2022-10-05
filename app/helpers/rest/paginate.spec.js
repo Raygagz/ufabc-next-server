@@ -39,7 +39,7 @@ describe('helpers.rest.paginate', function() {
     }
 
     func(context, null, () => {} )
-    
+
     assert.equal(context.erm.query.limit, 5)
     assert.equal(context.erm.query.skip, 45)
     assert.equal(context.query.limit, 5)

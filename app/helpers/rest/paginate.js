@@ -14,7 +14,7 @@ module.exports = function paginate(req, res, next) {
   if(!('page' in req.query)) {
     req.query.page = 1
   }
-  
+
   // normalize page
   req.query.page = parseInt(req.query.page)
   if(isNaN(req.query.page)){

@@ -41,7 +41,7 @@ module.exports = async (app) => {
     let ip = (
       req.headers['x-forwarded-for'] || req.connection.remoteAddress || ''
     ).split(',')[0].trim()
-    
+
     req.remoteAddress = ip
 
     next()
@@ -55,7 +55,7 @@ module.exports = async (app) => {
     mongoose: app.mongo,
   })
   server.use('/forest', forestRouter)
-  
+
   // Allow cors
   server.use(app.helpers.middlewares.cors)
 
@@ -64,7 +64,7 @@ module.exports = async (app) => {
     recursive: true,
     resolve: Module => server.use('/forest', Module)
   })
-  
+
 
   return server
 }

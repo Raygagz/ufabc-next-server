@@ -31,11 +31,11 @@
       <div class="col-md-3"></div>
     </div>
   </div>
-    
+
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="col-md-12">
-          <div id="wrapper-barra-brasil"> </div>          
+          <div id="wrapper-barra-brasil"> </div>
           </div>
     </div>
   </div>
@@ -44,30 +44,30 @@
     <div id="container-fluid">
       <div class="row-fluid">
         <div class="col-md-12">
-          <h1>Sistema de Matrículas</h1> 
+          <h1>Sistema de Matrículas</h1>
           <p id="ufabc">Universidade Federal do ABC</p>
         </div>
-      
+
         <div class="sobre"> </div>
       </div>
     </div>
   </header>
-      
-      
+
+
       <div id="menu">
-        
+
       </div>
 
       <!-- Usuário logado -->
       <span id="usuario_top">
-        
-      
+
+
         <b>felipe.santos92 |
         <a href="/logout">(sair)</a></b>
-      
-       
+
+
       </span>
-     
+
   <div id="meio">
       <div id="sessao"></div>
 <script src="assets/todasDisciplinas.js" type="text/javascript"></script>
@@ -83,9 +83,9 @@
   periodoMatricula = true;
   periodoSegundoQuadrimestre = false;
   var matriculaFixa = [];
-  
-  
-Effect.Pulsate('responda', { pulses: 10, duration: 8.0 });  
+
+
+Effect.Pulsate('responda', { pulses: 10, duration: 8.0 });
 
 </script>
 
@@ -103,7 +103,7 @@ Effect.Pulsate('responda', { pulses: 10, duration: 8.0 });
 </p>
   <article class="col-md-12">
 
-  
+
 
   <div class="container-fluid">
   <div class="row">
@@ -111,8 +111,8 @@ Effect.Pulsate('responda', { pulses: 10, duration: 8.0 });
 
 importantes</div>
   <div class="avisosimportantes">
-  
-<p> Disciplinas  que terão turmas ministradas na modalidade <u><b>semi-presencial</b></u>:</p>  
+
+<p> Disciplinas  que terão turmas ministradas na modalidade <u><b>semi-presencial</b></u>:</p>
 <p> - <b>DSBCM0505-15SA</b> - Processamento da Informação S-diurno (Santo André)</p>
 <p> - <b>DSBCM0505-15SB</b> - Processamento da Informação S-diurno (São Bernardo do Campo)</p>
 
@@ -129,9 +129,9 @@ importantes</div>
   </div>
 </div>
     <div class="col-md-12">
-    
+
       <label id="escolha" for="curso">Escolha o curso</label>
-    
+
       <select class="form-control" id="curso" name="curso" onchange="organizaDisciplinas()"><option value="16" selected="selected">Bacharelado em Ciência da Computação</option>
 <option value="20">Bacharelado em Ciência e Tecnologia</option>
 <option value="17">Bacharelado em Ciências Biológicas</option>
@@ -176,7 +176,7 @@ importantes</div>
   <p class="bg-warning">Em computadores antigos ou dispositivos com baixo processamento, aplicar os filtros pode demorar um pouco.</p>
   <div class="row">
 
-    
+
   </div>
   <div class="row">
   <div class="col-md-2 busca">
@@ -201,7 +201,7 @@ importantes</div>
 
   </div>
   <div class="col-md-2">
-    
+
   </div>
   </div>
   <div class="row">
@@ -209,12 +209,12 @@ importantes</div>
   <span id="aplicarfiltros" class="btn btn-success" onclick="aplicarfiltros()">Aplicar filtros</span>
   </div>
   <div class="col-md-11"></div>
-    
+
   </div>
-  
+
   </div>
-  
-  
+
+
   <br>
   <p class="bg-danger">Devido ao processo de cadastramento dos novos projetos pedagógicos, algumas disciplinas estão aparecendo com a categoria incorreta. Considere o que está no projeto de seu curso.</p>
 
@@ -222,11 +222,11 @@ importantes</div>
   <form action="https:/matricula" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="/ai2DWSakSWtrL89mY+rqDOE7UPKSP1Vdp7HbZZ8fYM=" /></div>
 
       <h2>Disciplinas Obrigatórias</h2>
-      
+
       <div id="disciplinasobrigatorias" class="">
 
         <table class="table" id="tabeladisciplinas">
-          
+
           <tr>
             <th style="width:20px">Selecionar</th>
             <th style="width:100px">Código</th>
@@ -238,11 +238,11 @@ importantes</div>
           </tr>
 
         </table>
-        
-        
-          
 
-        
+
+
+
+
 
       </div>
 
@@ -251,7 +251,7 @@ importantes</div>
       <div id="disciplinaslimitadas" class="">
 
         <table class="table" id="tabeladisciplinas">
-          
+
           <tr>
             <th style="width:20px">Selecionar</th>
             <th style="width:100px">Código</th>
@@ -263,11 +263,11 @@ importantes</div>
           </tr>
 
         </table>
-        
-        
-          
 
-        
+
+
+
+
 
       </div>
       <h2>Disciplinas livres</h2>
@@ -275,7 +275,7 @@ importantes</div>
 
 
         <table class="table" id="tabeladisciplinas">
-          
+
           <tr>
             <th style="width:20px">Selecionar</th>
             <th style="width:100px">Código</th>
@@ -287,11 +287,11 @@ importantes</div>
           </tr>
 
         </table>
-        
-        
-          
 
-        
+
+
+
+
 
       </div>
           <input id="_ra" name="[ra]" type="hidden" value="11086610" />
@@ -304,18 +304,18 @@ importantes</div>
   <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
   <input type="hidden" name="recaptcha_response_field" value="manual_challenge"/></noscript>
 </center>
-          
+
           <input type="submit" value="Enviar" id="enviar" class="btn btn-success">
-          
+
 
     </form>
-    
+
 
     <div id="chamarcalendario">
       <div id="btncalendario" onclick="clicar()"><p> Tabela de horários </p></div>
         <div id="disciplinaspegas" style="display: none;"><p id="limite">Seu limite é: <span id="limite">27</span> créditos</p><p id="pegas">Você selecionou: <span id="atualiza"></span> créditos</p></div>
         <div id="calendario" style="display: none;">
-    
+
             <table id="calendario1quinzenal" style="float: left;">
             <tbody id="segundo" style="">
               <tr><th style="background-color: #ccc; border-top: 2px solid black !important; border-bottom: 2px solid black !important; " colspan="7">Primeira quinzena</th>
@@ -345,12 +345,12 @@ importantes</div>
               <th>6ª</th>
               <th>Sáb</th>
 
-              
-              </tr>             
+
+              </tr>
             </tbody>
           </table>
         <p id="mudarcalendario" class="btn btn-success" onclick="quinzenal()" style="display: none;">Alterar para visualização quinzenal</p>
-        
+
       </div>
     </div>
 
@@ -370,17 +370,17 @@ var tempo = new Number();
 
 tempo = '1118.0' ;
 
- 
+
 
 function startCountdown(){
 
- 
+
 
     // Se o tempo não for zerado
 
     if((tempo - 1) >= 0){
 
- 
+
 
         // Pega a parte inteira dos minutos
 
@@ -390,7 +390,7 @@ function startCountdown(){
 
         var seg = tempo%60;
 
- 
+
 
         // Formata o número menor que dez, ex: 08, 07, ...
 
@@ -408,7 +408,7 @@ function startCountdown(){
 
         }
 
- 
+
 
         // Cria a variável para formatar no estilo hora/cronômetro
 
@@ -418,19 +418,19 @@ function startCountdown(){
 
         $("#sessao").html('<p class="tempo">' +"Tempo restante" + '</p>' + horaImprimivel);
 
- 
+
 
         // Define que a função será executada novamente em 1000ms = 1 segundo
 
         setTimeout('startCountdown()',1000);
 
- 
+
 
         // diminui o tempo
 
         tempo--;
 
- 
+
 
     // Quando o contador chegar a zero faz esta ação
 
@@ -440,13 +440,13 @@ function startCountdown(){
         $('body')[0].innerHTML = '<div class="sessaoencerrada col-md-offset-4 col-md-4">Sua conexão expirou.<br><a href="https://matricula.ufabc.edu.br">Faça o login novamente.</a> </div>'
 
     }
-    
 
- 
+
+
 
 }
 
- 
+
 
 // Chama a função ao carregar a tela
 
@@ -471,7 +471,7 @@ $('div.avisosimportantes')[0].style.display = "";
 
 }
 
-    
+
 </script>
 
 
@@ -487,14 +487,14 @@ $('div.avisosimportantes')[0].style.display = "";
   </div>
 </footer>
     </div>
-    
+
     <div id="bg_bottom">
           </div>
         </div>
 
       </div>
     </div>
-   
+
   </body>
 
 </html>

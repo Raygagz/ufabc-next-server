@@ -6,7 +6,7 @@ const rule = require('./rule')
 
 describe('POST /v1/enrollments', function() {
   var context, enrollments
-  
+
   beforeEach(async function () {
     enrollments = JSON.parse(app.helpers.test.getFixture('enrollments.json').data)
 

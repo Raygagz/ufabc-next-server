@@ -11,7 +11,7 @@ module.exports = async function (context) {
 
   const cacheKey = `reviews_${teacherId}`
   let cached =  await app.redis.cache.get(cacheKey)
-  
+
   if(cached){
     return cached
   }
@@ -19,14 +19,14 @@ module.exports = async function (context) {
   teacherId = mongoose.Types.ObjectId(teacherId)
 
   let stats = await app.models.enrollments.aggregate([
-    { 
-      $match: { 
+    {
+      $match: {
         mainTeacher: teacherId,
-        conceito: { $in: ['A', 'B', 'C', 'D', 'O', 'F'] } 
-      } 
+        conceito: { $in: ['A', 'B', 'C', 'D', 'O', 'F'] }
+      }
     },
     {
-      $group: { 
+      $group: {
         _id: {
           conceito: '$conceito',
           subject: '$subject'
