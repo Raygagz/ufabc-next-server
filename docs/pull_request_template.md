@@ -5,8 +5,8 @@ Describe what your PR is doing
 If you did UI work, please consider including a screenshot
 
 ### How do I test this?
-Please describe the tests that you ran to verify your changes. 
-Provide instructions so we can reproduce. 
+Please describe the tests that you ran to verify your changes.
+Provide instructions so we can reproduce.
 Please also list any relevant details for your test configuration.
 
 1. Test A
